@@ -1,7 +1,8 @@
 const BASE_URL =
   "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
-  const dropdowns = document.querySelectorALL(".dropdown select");
-
+  const dropdowns = document.querySelectorAll(".dropdown select");
+  const btn = document.querySelector("form button");
+  const fromCurr = document.querySelector(".from select");
   
 for (let select of dropdowns) {
     for (currCode in countryList) {
@@ -10,7 +11,7 @@ for (let select of dropdowns) {
       newOption.value = currCode;
       if (select.name === "from" && currCode === "USD") {
         newOption.selected = "selected";
-      } else if (select.name === "to" && currCode === "INR") {
+      } else if (select.name === "to" && currCode === "BDT") {
         newOption.selected = "selected";
       }
       select.append(newOption);
